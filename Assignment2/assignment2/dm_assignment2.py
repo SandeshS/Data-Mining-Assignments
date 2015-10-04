@@ -116,8 +116,8 @@ def knnpredictor(data1, data2):
 	#store the class variables separately
 	#finalTrainingData is ready to be processed.
 	#find closest points along with classes for each of the test data
-	findManhattan(data2, data1, result)
-	#findDistance(data2, data1, result)
+	#findManhattan(data2, data1, result) # This is manhattan distance
+	findDistance(data2, data1, result) # This is Euclid distance
 	for i in range(0, len(data2)):
 		result[i][-1] = data2[i][-1]
 	#result contains the test record and their closest points along with actual class variable

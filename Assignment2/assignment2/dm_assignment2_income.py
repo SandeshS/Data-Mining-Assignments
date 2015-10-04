@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib as pl
 import sys
 import csv
+import scipy.stats as st
 
 datafile = sys.argv[1]
 datafileTest = sys.argv[2]
@@ -73,6 +74,22 @@ def findManhattan(record, data, result):
                 result[counter][18] = tempResult[8][1]
                 result[counter][19] = tempResult[9][0]
                 result[counter][20] = tempResult[9][1]
+                result[counter][21] = tempResult[10][0]
+                result[counter][22] = tempResult[10][1]
+                result[counter][23] = tempResult[11][0]
+                result[counter][24] = tempResult[11][1]
+                result[counter][25] = tempResult[12][0]
+                result[counter][26] = tempResult[12][1]
+                result[counter][27] = tempResult[13][0]
+                result[counter][28] = tempResult[13][1]
+                result[counter][29] = tempResult[14][0]
+                result[counter][30] = tempResult[14][1]
+                result[counter][31] = tempResult[15][0]
+                result[counter][32] = tempResult[15][1]
+                result[counter][33] = tempResult[16][0]
+                result[counter][34] = tempResult[16][1]
+               # result[counter][35] = tempResult[17][0]
+               # result[counter][36] = tempResult[17][1]
 		counter+=1
 
 def findDistance(record, data, result):
@@ -170,8 +187,8 @@ def knnpredictor(indata1,indata2):
 	#print result
 	transidsfortest = indata2[:, [0]]
 	closestDistances = 17 #TODO will change if nearest neighbour changes - Changed from 6 - 10 and 10 - 20 20 - 30
-	#findDistance(indata2, indata1, result)  # This is Euclid distance
-	findManhattan(indata2, indata1, result)
+	findDistance(indata2, indata1, result)  # This is Euclid distance
+	#findManhattan(indata2, indata1, result)
 	for i in range(0, len(indata2)):
 		result[i][-1] = indata2[i][-1]
 	result = result.tolist()
